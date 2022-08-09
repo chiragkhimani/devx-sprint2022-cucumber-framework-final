@@ -19,8 +19,6 @@ public class LoginPage extends BasePage{
     @FindBy(id = "txtPassword")
     WebElement passWord;
 
-
-
     public void doLogin() {
         userName.sendKeys(ConfigReader.getProperty("login.username") + Keys.ENTER);
         passWord.sendKeys(ConfigReader.getProperty("login.password") + Keys.ENTER);
