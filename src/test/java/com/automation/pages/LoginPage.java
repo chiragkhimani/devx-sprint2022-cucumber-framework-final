@@ -19,10 +19,19 @@ public class LoginPage extends BasePage{
     @FindBy(id = "txtPassword")
     WebElement passWord;
 
+    @FindBy(id="spanMessage")
+    WebElement invalidLoginErrorMsg;
+
     public void doLogin() {
         log.info("Doing login");
         userName.sendKeys(ConfigReader.getProperty("login.username") + Keys.ENTER);
         passWord.sendKeys(ConfigReader.getProperty("login.password") + Keys.ENTER);
+    }
+
+    public void doLogin(String username, String password) {
+        log.info("Doing login");
+        userName.sendKeys(username);
+        passWord.sendKeys(password + Keys.ENTER);
     }
 
     public void verifyPage() {
@@ -34,5 +43,9 @@ public class LoginPage extends BasePage{
     public void openWebsite() {
         log.info("Opening the website");
         driver.get(ConfigReader.getProperty("app.baseurl"));
+    }
+
+    public void verifyInvalidLoginError() {
+        Assert.assertTrue("Invalid login error message is not displayed",invalidLoginErrorMsg.isDisplayed());
     }
 }
