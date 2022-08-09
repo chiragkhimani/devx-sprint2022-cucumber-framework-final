@@ -20,16 +20,19 @@ public class LoginPage extends BasePage{
     WebElement passWord;
 
     public void doLogin() {
+        log.info("Doing login");
         userName.sendKeys(ConfigReader.getProperty("login.username") + Keys.ENTER);
         passWord.sendKeys(ConfigReader.getProperty("login.password") + Keys.ENTER);
     }
 
     public void verifyPage() {
+        log.info("Verifying login page");
         Assert.assertTrue("User is not on login page",userName.isDisplayed());
         Assert.assertTrue("User is not on login page",passWord.isDisplayed());
     }
 
     public void openWebsite() {
+        log.info("Opening the website");
         driver.get(ConfigReader.getProperty("app.baseurl"));
     }
 }
