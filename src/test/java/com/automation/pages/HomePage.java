@@ -53,7 +53,6 @@ public class HomePage extends BasePage {
 
     public void clickOnLogoutLink() {
         logoutLink.click();
-        CommonMethods.waitForElementVisible(logoutLink);
     }
 
     public void verifyPage() {
