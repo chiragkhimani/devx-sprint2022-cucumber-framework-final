@@ -12,3 +12,8 @@ import org.junit.runner.RunWith;
 public class TestRunner {
 
 }
+
+
+// Waits that are built in Selenium
+// We create our own custom methods
+// Programming is all about optimizing code

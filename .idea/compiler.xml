@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="TestNGAutomationFramework" />
         <module name="CucumberAutomationFrameworkFinal" />
+        <module name="devx-sprint2022-cucumber-framework-final" />
       </profile>
     </annotationProcessing>
   </component>

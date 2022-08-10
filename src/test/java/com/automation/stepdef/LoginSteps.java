@@ -1,5 +1,6 @@
 package com.automation.stepdef;
 
+import com.automation.actions.CommonWaits;
 import com.automation.pages.LoginPage;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -8,6 +9,7 @@ import io.cucumber.java.en.When;
 public class LoginSteps {
 
     LoginPage loginPage = new LoginPage();
+    CommonWaits commonWaits = new CommonWaits();
 
     @Given("user open website")
     public void user_open_website() {
@@ -27,6 +29,12 @@ public class LoginSteps {
     @When("user login with username {string} and password {string}")
     public void user_login_with_username_and_password(String username, String password) {
         loginPage.doLogin(username,password);
+    }
+
+    @Then("verify element is displayed")
+    public void verify_element_is_displayed() {
+        String locator = "//div[@id = 'spanMessage']";
+        commonWaits.waitTillElementIsDisplayed(locator, 5, 10);
     }
 
     @Then("verify invalid login error message is displayed")
