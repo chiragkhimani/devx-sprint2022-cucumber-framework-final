@@ -14,6 +14,7 @@ public class CommonWaits {
 
     WebDriver driver = DriverUtils.getDriver();
 
+    // Used to wait for element and proceed to the next step. Don't use as assertion
     public void waitTillElementIsDisplayed(String xpathLocator, int maxDuration, int interval) {
         ConditionFactory awaiting = Awaitility.await();
 

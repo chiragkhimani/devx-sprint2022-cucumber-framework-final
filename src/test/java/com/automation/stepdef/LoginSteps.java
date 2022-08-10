@@ -31,9 +31,9 @@ public class LoginSteps {
         loginPage.doLogin(username,password);
     }
 
-    @Then("verify element is displayed")
+    @When("verify element is displayed")
     public void verify_element_is_displayed() {
-        String locator = "//div[@id = 'spanMessage']";
+        String locator = "//span[@id = 'spanMessage']";
         commonWaits.waitTillElementIsDisplayed(locator, 5, 10);
     }
 
