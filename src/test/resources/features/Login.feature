@@ -12,3 +12,4 @@ Feature: This file is useful to test logout related scenario
       | chirag   | devx     |
       |          | admin123 |
       | admin    |          |
+
