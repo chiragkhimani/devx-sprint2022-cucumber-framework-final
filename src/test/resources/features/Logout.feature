@@ -7,3 +7,7 @@ Feature: This file is useful to test logout related scenario
       When user clicks on user badge
       And click on logout link
       Then verify login page is displayed
+
+
+      Scenario: Retrieve Data From DataBase
+        Given Sample Step to Retrieve Data

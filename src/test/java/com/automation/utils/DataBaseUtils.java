@@ -14,10 +14,15 @@ public class DataBaseUtils {
             con = DriverManager.getConnection("jdbc:mysql://localhost:3306/companydb", "root", "Trust@123");
     }
 
-    public static ResultSet executeQuery(String query) throws Exception{
+    public static ResultSet executeQuery(String query){
         // 2. Query the Database
-        Statement stmt = con.createStatement();
-        ResultSet result = stmt.executeQuery(query);
+        ResultSet result = null;
+        try {
+            Statement stmt = con.createStatement();
+            result = stmt.executeQuery(query);
+        }catch(Exception e){
+            e.printStackTrace();
+        }
         return result;
     }
 

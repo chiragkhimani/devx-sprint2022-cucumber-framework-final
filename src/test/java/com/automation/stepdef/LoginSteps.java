@@ -42,5 +42,10 @@ public class LoginSteps {
         loginPage.verifyInvalidLoginError();
     }
 
+    @Then("Sample Step to Retrieve Data")
+    public void sampleStepToRetrieveData(){
+        loginPage.sampleMethodToRetrieveData();
+    }
+
 
 }
